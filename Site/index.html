@@ -4,8 +4,34 @@
     <meta charset="UTF-8">
     <meta name="PredStats" content="width=device-width, initial-scale=1.0">
     <title>Pred Stats</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="header">
+        <div id="topnav">
+            <div class="logo">
+                <h1>Pred Stats</h1>
+            </div>
+            <div id="search">
+                <form action="main.go" method="get">
+                <label for="battletag">Battletag:</label>
+                <input type="text" id="battletag" name="battletag" required>
+                <input type="submit" value="Submit">
+            </form>
+            </div>
+        </div>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+        </div>
     
+    </div>
+    <div class="content">
+        <h2>Stats</h2>
+        <p>Here you can find how you do on average with each hero</p>
+    </div>
+    <div class="footer">
+        <p>Created by: Pred</p>
+    </div>
 </body>
 </html>
