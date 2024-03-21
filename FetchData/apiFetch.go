@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func GetData(url string) (*struct{}, error) {
+func GetData(url string) (*data, error) {
 	resp, err := http.Get(url) // Replace with your API
 	if err != nil {
 		return nil, err
@@ -18,7 +18,10 @@ func GetData(url string) (*struct{}, error) {
 		return nil, err
 	}
 
-	var data struct{}
+	type Data interface {
+		Matches() []string
+	}
+	var data Data
 	err = json.Unmarshal(body, &data)
 	if err != nil {
 		return nil, err
