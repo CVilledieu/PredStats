@@ -2,11 +2,12 @@ package APIData
 
 import (
 	"encoding/json"
+	"fmt"
 	"io"
 	"net/http"
 )
 
-func GetData(url string) (*data, error) {
+func GetData(url string) (*PredecessorMatch, error) {
 	resp, err := http.Get(url) // Replace with your API
 	if err != nil {
 		return nil, err
@@ -18,14 +19,23 @@ func GetData(url string) (*data, error) {
 		return nil, err
 	}
 
-	type Data interface {
-		Matches() []string
-	}
-	var data Data
+	data := [10]PredecessorMatch{}
+
 	err = json.Unmarshal(body, &data)
 	if err != nil {
 		return nil, err
 	}
+	fmt.Println(&data)
+	firstMatch, err := returnOneMatch(data)
+	if err != nil {
+		return nil, err
+	}
 
-	return &data, nil
+	return firstMatch, nil
+}
+
+func returnOneMatch(match [10]PredecessorMatch) (*PredecessorMatch, error) {
+
+	singleMatch := match[0]
+	return &singleMatch, nil
 }
