@@ -7,13 +7,18 @@ import (
 )
 
 func main() {
+	// Get the current time in seconds since epoch
+	//timeSinceEpoch := strconv.FormatInt(time.Now().Unix(), 10)
 
-	url := "https://pred.saibotu.de/api/public/get-matches-since/0/" // Replace with your API
-	data, err := APIData.GetData(url)                                // Call the fetchData function from the fetchdata package
+	// Replace with your API
+	// Call the fetchData function from the fetchdata package
+	url := "https://pred.saibotu.de/api/public/get-matches-since/1711235812/"
+	data, err := APIData.GetData(url)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("there was an error: ", err)
 		return
 	}
-
-	fmt.Println(data)
+	matchId := *data
+	firstMatch := matchId[0]
+	fmt.Println("Match ID: ", firstMatch.PlayerData[0].MinionData.MinionsKilled)
 }
