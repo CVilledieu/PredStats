@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	APIData "PredStats/FetchData"
+	db "PredStats/database"
 )
 
 func main() {
@@ -21,4 +22,11 @@ func main() {
 	matchId := *data
 	firstMatch := matchId[0]
 	fmt.Println("Match ID: ", firstMatch.PlayerData[0].MinionData.MinionsKilled)
+
+	// Call the Database function from the database package
+	dberr := db.DBConn()
+	if dberr != nil {
+		fmt.Println("there was an error: ", dberr)
+		return
+	}
 }
