@@ -9,12 +9,9 @@
 ### V 0.0.1
 
 
-Found the correct API location, but seems to not be from actual Omeda. Found on Pred Discord. 
+API urls 
 * https://pred.saibotu.de/api/public/get-matches-since/0/
 * 
 * 
 
-
-
-
-Example of data pulled from api can be found in example.json
+structure of API is an array of 10 matches. where each match is a struct
