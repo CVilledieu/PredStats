@@ -1,7 +1,7 @@
 # Pred Stats
 
 ## current goals
-* Create basic site to display info<br>
+* Create basic site to display info
 * Pull data from Pred API
 * Import data into a data base
 * Break data down and track based on different stats
