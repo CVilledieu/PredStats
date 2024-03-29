@@ -14,9 +14,12 @@
             </div>
             <div id="search">
                 <form action="main.go" method="get">
-                <label for="battletag">Battletag:</label>
+                <label for="battletag">Battletag:</label>                
                 <input type="text" id="battletag" name="battletag" required>
-                <input type="submit" value="Submit">
+                <button hx-post="/api/submit-form" 
+                hx-trigger="click"
+                hx-target=".content" 
+                hx-swap="outerHTML"> Search </button>
             </form>
             </div>
         </div>
