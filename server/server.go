@@ -45,3 +45,8 @@ func GetMatchData(c echo.Context) error {
 	id := c.Param("id")
 	return c.String(http.StatusOK, id)
 }
+
+func GetMatchDataSince(c echo.Context) error {
+	id := c.Param("id")
+	return c.String(http.StatusOK, id)
+}
